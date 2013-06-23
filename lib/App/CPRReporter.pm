@@ -456,7 +456,7 @@ Helper function to run custome code after the object has been created by Moose.
 
 =head1 TODO
 
-Currently, the application prints output to STDOUT in a CSV format. Furture versions could write to Excel immediately.
+Currently, the application prints output to STDOUT in a CSV format. Future versions could write to Excel immediately.
 
 =cut
 
