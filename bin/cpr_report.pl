@@ -3,9 +3,41 @@
 use strict;
 use 5.012;
 use App::CPRReporter;
+use Getopt::Long;
+use Pod::Usage;
 
-my $reporter = App::CPRReporter->new(employees => 'employees.xlsx', certificates => 'certificates.xml');
+my ( $employees, $certificates, $course, $help, $man );
+
+GetOptions(
+    'people=s' => \$employees,
+    'certs=s'  => \$certificates,
+    'course=s' => \$course,
+    'help|?|h' => \$help,
+    'man'      => \$man,
+) or pod2usage(2);
+pod2usage(1)
+  if ( $help || !defined($certificates) || $course eq "" || $employees eq "" );
+pod2usage( -exitstatus => 0, -verbose => 2 ) if ($man);
+
+my $reporter = App::CPRReporter->new(
+    employees    => $employees,
+    certificates => $certificates,
+    course       => $course
+);
 $reporter->run();
 
 # PODNAME: cpr_reporter.pl
-# ABSTRACT: Example application
+# ABSTRACT: Generate an overview of the status of people enrolled for CPR training.
+
+=head1 SYNOPSIS
+
+cpr_report.pl --people <file1.xlsx> --certs <file2.xml> --course <file3.xlsx>
+
+=head1 DESCRIPTION
+
+Application to merge information from various datasets to generate an overview of who followed the practical and theoretical CPR training.
+
+The expected format of the various input files is documented in the module App::CPRReporter.
+
+=cut
+
