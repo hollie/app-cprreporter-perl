@@ -1,10 +1,23 @@
 ==================================================
-Changes from 2012-06-23 00:00:00 +0000 to present.
+Changes from 2012-07-24 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.01 at 2013-06-23 18:19:30 +0000
+version 0.02 at 2013-07-24 07:51:22 +0000
 -----------------------------------------
+
+  Change: c747b709c5a5cfc6bdf73c07fb48f1e5156c1240
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-07-24 09:51:07 +0000
+
+    Fixes to ensure testing works fine on Perl 5.12, extended
+    documentation. Thanks to andk for reporting issue #1 
+
+  Change: ca92868e6dfa58ad5d4f1e7da2284776ad3feddd
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-23 20:21:49 +0000
+
+    Updated README.md for the master branch 
 
   Change: 8e2542b5e84d147e7494282527ddac3eb51277af
   Author: Lieven Hollevoet <hollie@lika.be>
@@ -60,6 +73,16 @@ version 0.01 at 2013-06-23 18:19:30 +0000
   Date : 2013-06-16 13:24:53 +0000
 
     Initial commit 
+
+-----------------------------------------
+version 0.01 at 2013-06-23 18:19:47 +0000
+-----------------------------------------
+
+  Change: 9c57668b8e1283873f0228e97040b356950365f8
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-23 20:19:47 +0000
+
+    Build results of 8e2542b (on master) 
 
 ================
 End of releases.

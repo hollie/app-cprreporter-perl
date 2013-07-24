@@ -1,10 +1,10 @@
 {
-   "abstract" : "Application to merge various datasets info an overview of who followed CPR training",
+   "abstract" : "Application to merge various datasets info an overview of who followed CPR training (cardiopulmonary resuscitation, the use of rescue breathing and chest compressions to help a person whose breathing and heartbeat have stopped)",
    "author" : [
       "Lieven Hollevoet <hollie@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300031, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -63,6 +63,6 @@
          "web" : "https://github.com/hollie/app-cprreporter-perl"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 

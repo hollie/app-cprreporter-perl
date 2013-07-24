@@ -39,7 +39,7 @@ cpr_reporter.pl - Generate an overview of the status of people enrolled for CPR 
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

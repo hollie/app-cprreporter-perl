@@ -1,9 +1,11 @@
 NAME
     App::CPRReporter - Application to merge various datasets info an
-    overview of who followed CPR training
+    overview of who followed CPR training (cardiopulmonary resuscitation,
+    the use of rescue breathing and chest compressions to help a person
+    whose breathing and heartbeat have stopped)
 
 VERSION
-    version 0.01
+    version 0.02
 
 SYNOPSIS
     my $object = App::CPRReporter->new(parameter => 'text.txt');
@@ -11,7 +13,9 @@ SYNOPSIS
 DESCRIPTION
     This application parses various datasets and fuses the information to
     generate an overview of who followed the theoretical part and the
-    practical part of a course.
+    practical part of a course on CPR (cardiopulmonary resuscitation, the
+    use of rescue breathing and chest compressions to help a person whose
+    breathing and heartbeat have stopped).
 
     More specifically, this application was written to take into account the
     following information:
