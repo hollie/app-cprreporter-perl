@@ -47,7 +47,7 @@ sub BUILD {
     $self->_parse_employees;
 
     # Make an array of employees that will be used for fuzzy matching
-    foreach my $employee ( keys $self->{_employees} ) {
+    foreach my $employee ( keys %{$self->{_employees}} ) {
         push( @{ $self->{_employee_array} }, $employee );
     }
 
@@ -65,7 +65,7 @@ sub run {
     # Certificates are here
     my $certificate_count = 0;
     my $certs             = $self->{_certificates};
-    foreach my $date ( sort keys $certs ) {
+    foreach my $date ( sort keys %{$certs} ) {
         foreach my $certuser ( @{ $certs->{$date} } ) {
             my $fullname = $self->_resolve_name( $certuser->{familyname},
                 $certuser->{givenname} );
@@ -126,7 +126,7 @@ sub run {
     # Check people who are in training and that have a certificate
     # now run the stats, for every dienst separately report
     my $stats;
-    foreach my $employee ( keys $self->{_employees} ) {
+    foreach my $employee ( keys %{$self->{_employees}} ) {
         my $dienst = $self->{_employees}->{$employee}->{dienst};
         my $cert   = $self->{_employees}->{$employee}->{cert} || 'none';
         my $course = $self->{_employees}->{$employee}->{course} || 'none';
@@ -155,7 +155,7 @@ sub run {
     # Display the results
     say "Dienst;Certificaat;Training;Niet gestart;Theorie";
 
-    foreach my $dienst ( sort keys $stats ) {
+    foreach my $dienst ( sort keys %{$stats} ) {
         next if ( $dienst eq 'employee_count' );
 
         if ( !defined $stats->{$dienst}->{certified}->{count} ) {
@@ -396,7 +396,7 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 1;
 
-# ABSTRACT: Application to merge various datasets info an overview of who followed CPR training
+# ABSTRACT: Application to merge various datasets info an overview of who followed CPR training (cardiopulmonary resuscitation, the use of rescue breathing and chest compressions to help a person whose breathing and heartbeat have stopped)
 
 =head1 SYNOPSIS
 
@@ -405,7 +405,9 @@ my $object = App::CPRReporter->new(parameter => 'text.txt');
 =head1 DESCRIPTION
 
 This application parses various datasets and fuses the information to generate an overview of
-who followed the theoretical part and the practical part of a course.
+who followed the theoretical part and the practical part of a course on CPR (cardiopulmonary
+resuscitation, the use of rescue breathing and chest compressions to help a person whose
+breathing and heartbeat have stopped).
 
 More specifically, this application was written to take into account the following information:
 
