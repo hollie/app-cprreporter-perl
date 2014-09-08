@@ -5,7 +5,7 @@ NAME
     whose breathing and heartbeat have stopped)
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
     my $object = App::CPRReporter->new(parameter => 'text.txt');

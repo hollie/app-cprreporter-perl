@@ -2,10 +2,7 @@ use strict;
 use warnings;
 
 package App::CPRReporter 0.02;
-{
-  $App::CPRReporter::VERSION = '0.02';
-}
-
+$App::CPRReporter::VERSION = '0.03';
 use Moose;
 use namespace::autoclean;
 use 5.012;
@@ -224,9 +221,9 @@ sub _parse_employees {
 
     # Go over the rows in the sheet and extract employee info, skip first row
     foreach my $row ( $sheet->{MinRow} + 1 .. $sheet->{MaxRow} ) {
-        my $dienst     = $sheet->{Cells}[$row][0]->{Val};
-        my $familyname = uc( $sheet->{Cells}[$row][2]->{Val} );
-        my $givenname  = uc( $sheet->{Cells}[$row][3]->{Val} );
+        my $dienst     = $sheet->{Cells}[$row][0]->{Val} || next;
+        my $familyname = uc( $sheet->{Cells}[$row][2]->{Val} ) || "NotDefined_employee_$row";
+        my $givenname  = uc( $sheet->{Cells}[$row][3]->{Val} ) || "NotDefined_employee_$row";
 
         my $name = "$familyname $givenname";
         $self->{_employees}->{$name} = { dienst => $dienst };
@@ -246,8 +243,8 @@ sub _parse_course {
 
     # Go over the rows in the sheet and extract employee info, skip first row
     foreach my $row ( $sheet->{MinRow} + 1 .. $sheet->{MaxRow} ) {
-        my $familyname = $sheet->{Cells}[$row][1]->{Val};
-        my $givenname  = $sheet->{Cells}[$row][2]->{Val};
+        my $familyname = $sheet->{Cells}[$row][1]->{Val} || "NotDefined_course_$row";
+        my $givenname  = $sheet->{Cells}[$row][2]->{Val} || "NotDefined_course_$row";
         $familyname = uc($familyname) || $row;
         $givenname  = uc($givenname)  || $row;
 
@@ -405,13 +402,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 App::CPRReporter - Application to merge various datasets info an overview of who followed CPR training (cardiopulmonary resuscitation, the use of rescue breathing and chest compressions to help a person whose breathing and heartbeat have stopped)
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

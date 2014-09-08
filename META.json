@@ -4,7 +4,7 @@
       "Lieven Hollevoet <hollie@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.132830",
    "license" : [
       "perl_5"
    ],
@@ -38,6 +38,7 @@
             "Text::Iconv" : "0",
             "Text::ResusciAnneparser" : "0",
             "autodie" : "0",
+            "lib" : "0",
             "namespace::autoclean" : "0",
             "perl" : "5.012",
             "strict" : "0",
@@ -63,6 +64,6 @@
          "web" : "https://github.com/hollie/app-cprreporter-perl"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
 

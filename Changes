@@ -1,10 +1,23 @@
 ==================================================
-Changes from 2012-07-24 00:00:00 +0000 to present.
+Changes from 2013-09-08 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.02 at 2013-07-24 07:51:22 +0000
+version 0.03 at 2014-09-08 18:53:16 +0000
 -----------------------------------------
+
+  Change: bfcb5f0241f86e68c825cfddf2ef21b7ec0cf039
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2014-09-08 20:49:12 +0000
+
+    Skip empty lines in Excel input, ensure new Dist::Zilla packs test
+    data well 
+
+  Change: 9994088bba896b5795ba4beb0dea565e77a5af75
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2014-09-08 20:37:45 +0000
+
+    Ensure to handle empty rows correctly 
 
   Change: c747b709c5a5cfc6bdf73c07fb48f1e5156c1240
   Author: Lieven Hollevoet <hollie@lika.be>
@@ -74,16 +87,6 @@ version 0.02 at 2013-07-24 07:51:22 +0000
 
     Initial commit 
 
------------------------------------------
-version 0.01 at 2013-06-23 18:19:47 +0000
------------------------------------------
-
-  Change: 9c57668b8e1283873f0228e97040b356950365f8
-  Author: Lieven Hollevoet <hollie@lika.be>
-  Date : 2013-06-23 20:19:47 +0000
-
-    Build results of 8e2542b (on master) 
-
-================
-End of releases.
-================
+================================================
+Plus 2 releases after 2013-09-08 00:00:00 +0000.
+================================================
