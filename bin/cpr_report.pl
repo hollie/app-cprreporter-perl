@@ -1,5 +1,7 @@
 #! /usr/bin/env perl
 
+use lib "../lib";
+
 use strict;
 use 5.012;
 use App::CPRReporter;
@@ -26,7 +28,7 @@ my $reporter = App::CPRReporter->new(
 );
 $reporter->run();
 
-# PODNAME: cpr_reporter.pl
+# PODNAME: cpr_report.pl
 # ABSTRACT: Generate an overview of the status of people enrolled for CPR training.
 
 =head1 SYNOPSIS

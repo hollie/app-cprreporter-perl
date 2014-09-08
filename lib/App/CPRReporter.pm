@@ -221,9 +221,9 @@ sub _parse_employees {
 
     # Go over the rows in the sheet and extract employee info, skip first row
     foreach my $row ( $sheet->{MinRow} + 1 .. $sheet->{MaxRow} ) {
-        my $dienst     = $sheet->{Cells}[$row][0]->{Val};
-        my $familyname = uc( $sheet->{Cells}[$row][2]->{Val} );
-        my $givenname  = uc( $sheet->{Cells}[$row][3]->{Val} );
+        my $dienst     = $sheet->{Cells}[$row][0]->{Val} || "NotDefined_employee_$row";
+        my $familyname = uc( $sheet->{Cells}[$row][2]->{Val} ) || "NotDefined_employee_$row";
+        my $givenname  = uc( $sheet->{Cells}[$row][3]->{Val} ) || "NotDefined_employee_$row";
 
         my $name = "$familyname $givenname";
         $self->{_employees}->{$name} = { dienst => $dienst };
@@ -243,8 +243,8 @@ sub _parse_course {
 
     # Go over the rows in the sheet and extract employee info, skip first row
     foreach my $row ( $sheet->{MinRow} + 1 .. $sheet->{MaxRow} ) {
-        my $familyname = $sheet->{Cells}[$row][1]->{Val};
-        my $givenname  = $sheet->{Cells}[$row][2]->{Val};
+        my $familyname = $sheet->{Cells}[$row][1]->{Val} || "NotDefined_course_$row";
+        my $givenname  = $sheet->{Cells}[$row][2]->{Val} || "NotDefined_course_$row";
         $familyname = uc($familyname) || $row;
         $givenname  = uc($givenname)  || $row;
 
