@@ -203,6 +203,25 @@ sub run {
         }
     }
 
+    # Display employees from personel database who have no certificate yet
+    say "People who have no certificate yet:";
+    my $nocert_count = 0;
+    foreach my $dienst ( sort keys %{$stats} ) {
+        next if ( $dienst eq 'employee_count' );
+
+        say "\n**-> $dienst";
+        say "************";
+        foreach my $person ( @{$stats->{$dienst}->{not_started}->{list}} ){
+            print $person . "\n";
+            $nocert_count++;
+        }
+        foreach my $person ( @{$stats->{$dienst}->{training}->{list}} ){
+            print $person . "\n";
+            $nocert_count++;
+        }
+    }
+    say "In total $nocert_count people have no certificate yet";
+
     #say "";
     #say "Resolved names";
     #print Dumper($self->{_resolve});
